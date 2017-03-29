@@ -1,0 +1,60 @@
+      
+              <!DocType html> 
+                        <form name="userForm" ng-submit="blog.UpdateForm(userForm.$valid)" novalidate>
+                            
+                            <!--Title-->
+                            <div class="form-group" ng-class="{'has error': !userForm.blog.title.$invalid && userForm.blog.title.$pristine}">
+                                <label>title:</label>
+                                <input type="text" name="title" class="form-control" ng-model="blog.title" ng-minlength = "3" ng-maxlength = "8"/>
+                                <p ng-show="userForm.title.$error.minlength" class="help-block"> Title is too short.</p>
+                                <p ng-show="userForm.title.$error.maxlength" class="help-block"> Title is too long.</p>
+                            </div>
+                            <br />
+                            <!--email-->
+                            <div class="form-group" ng-class="{'has error': !userForm.author.$invalid && userForm.author.$pristine}">
+                                <label>author:</label>
+                                <input type="author" name="author" class="form-control" ng-model="blog.author" required >
+                                <p ng-show="userForm.author.$invalid && !userForm.author.$pristine" class="help-block"> Author is required.</p>
+                            </div>
+                            <br />
+                            <!--content-->
+                            <div class="form-group" ng-class="{'has error': !userForm.content.$invalid && userForm.content.$pristine}">
+                                <h2><strong>Content</strong></h2>
+                                <textarea class="form-control" name="content" ng-model="blog.content" ng-minlength="6" ng-maxlength="400" rows="5"></textarea>
+                                <p ng-show="userForm.content.$error.minlength" class="help-block"> Content is too short.</p>
+                                <p ng-show="userForm.content.$error.maxlength" class="help-block"> Content is too long.</p>
+                            </div>
+                            <br />
+
+                            <button type="submit" class="btn btn-primary" ng-click="blog.hide()" ng-disabled="userForm.$invalid">submit</button>
+                         
+                        </form>
+                <!--End of Comment form to blog-->
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+           
+            <!-- comment start -->
+            <div class="comment mediaclearfix">
+                <div class="comment-avatar media-left">
+                    <img src="http://placehold.it/50x50" alt="avatar">
+                </div>
+                <div  class="comment-content media-body">
+                    <h3 class="media-heading">{{blog.title}}</h3>
+                    <div class="comment-meta">By <p id="commentEmail">{{blog.author}}</p> | Today, 12:31</div>
+                    <div class="comment-body clearfix">
+                        <p>{{blog.content}}</p>
+                        <a href="#" class="btn btn-gray more reply" data-toggle="modal" data-target="#myModal"></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+                
+                <div ui-view></div>

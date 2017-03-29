@@ -1,0 +1,243 @@
+    <!--/nav end -->
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>All Courses</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li>Courses</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 margin-btm-40">
+                <!--courses tabs-->
+                <div>
+                    <!-- Nav tabs -->
+                  
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="tred">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="course-box">
+                                        <a class="thumb" href="#">
+                                            <img src="/content/img/images/cancun.jpg" alt="" class="img-responsive">
+                                            <span class="price-tag skin">Spanish</span>
+                                        </a>
+                                        <div class="course-desc">
+                                             <a ui-sref="MexicanCuisine"><h4>Mexican Cuisine: A Journey to the Yucatan</h4></a>
+                                            
+                                            <span>By Samantha Johns</span>
+                                            <div class="desc-footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        
+                                                    </div>
+                                                    <div class="col-xs-6 text-right">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--course-box-->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="course-box">
+                                        <a class="thumb" href="coursedashboard.html">
+                                            <img src="/content/img/images/morocco.jpg" alt="" class="img-responsive">
+                                            <span class="price-tag skin">French</span>
+                                        </a>
+                                        <div class="course-desc">
+                                            
+                                            <h4>Morocco: Culture & Customs</a></h4>
+                                            <span>By Winifred Carter</span>
+                                            <div class="desc-footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        
+                                                    </div>
+                                                    <div class="col-xs-6 text-right">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--course-box-->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="course-box">
+                                        <a class="thumb" href="coursedashboard.html">
+                                            <img src="/content/img/images/japan.jpg" alt="" class="img-responsive">
+                                            <span class="price-tag skin">Japanese</span>
+                                        </a>
+                                        <div class="course-desc">
+                                            <h4>The Sacred Lotus Festival</h4>
+                                            <span>By Transito Velasquez</span>
+                                            <div class="desc-footer">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                      
+                                                    </div>
+                                                    <div class="col-xs-6 text-right">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="rec">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="course-box">
+                                <a class="thumb" href="#">
+                                    <span class="price-tag skin">Japanese</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--course-box-->
+            </div>
+        </div>
+    </div>
+    <!--course-box-->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!--end courses tabs-->
+    <div class="course-finder">
+        <form>
+            <div class="row">
+                <div class="col-sm-3">
+  
+                    <select class="form-control" ng-model="langSelect">
+                           <option value=""> Choose Language</option>
+                                    <option value="french">French</option>
+                                
+                                    <option>Japanese</option>
+                                    <option>Spanish</option>
+                                </select>
+                </div>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" placeholder="Keywords" ng-model="langSelect">
+                </div>
+                <!--<div class="col-sm-3">
+                    <button type="button" class="btn btn-skin btn-lg btn-block"><i class="fa fa-search"></i> Find</button>
+                </div>-->
+            </div>
+        </form>
+    </div>
+    <!--course finder-->
+    <div class="space40"></div>
+    <div class="table-responsive">
+        <table class="table table-hover table-courses">
+            <!--<button ng-click="course.getMyCourse()"  type="submit" class="btn btn-primary" >View Courses </button>-->
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Program</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cor in course.items | filter: 'speakeasy' | filter: langSelect">
+                    <div >
+                       
+                        <td class="id" data-title="ID">{{cor.format}}</td>
+                        <!--<td class="id" data-title="number">{{cor.description}}</td>-->
+                      <td class="code" data-title="Program">{{cor.title}}</td>
+                        <td class="description" data-title="Length">{{cor.price}}</td>
+                    </div>
+    </div>
+    </tr>
+    <tr>
+        <td class="id" data-title="ID"></td>
+        <td class="name" data-title="Course Name">
+            <a href="#"></a>
+        </td>
+        <td class="code" data-title="Program"></td>
+        <td class="description" data-title="Length"></td>
+    </tr>
+    <tr>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="space30"></div>
+   
+    
+  
+    <div class="col-md-3 margin-btm-40">
+        <div class="sidebar-widget">
+        </div>
+    </div>
+    </div>
+    <div class="pattern-bg">
+        <div class="container">
+          
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <div class="owl-carousel owl-theme testi-slider">
+                        <div class="item">
+                            <img src="/content/img/images/argentina.jpg" alt="" class="img-circle" width="100">
+                            <p>
+                                Donec fringilla lacinia laoreet. Vestibulum ultrices blandit tempor. Aenean magna elit, varius eget quam a, posuere...
+                            </p>
+                            <h4>John Doe - <em>Web Design</em></h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-full"></i>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/content/img/images/cancun.jpg" alt="" class="img-circle" width="100">
+                            <p>
+                                Donec fringilla lacinia laoreet. Vestibulum ultrices blandit tempor. Aenean magna elit, varius eget quam a, posuere...
+                            </p>
+                            <h4>John Doe - <em>Web Design</em></h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-empty"></i>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/content/img/images/japan.jpg" alt="" class="img-circle" width="100">
+                            <p>
+                                Donec fringilla lacinia laoreet. Vestibulum ultrices blandit tempor. Aenean magna elit, varius eget quam a, posuere...
+                            </p>
+                            <h4>John Doe - <em>Web Design</em></h4>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

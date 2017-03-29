@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html ng-app="speakeasy">
+
+<head>
+   
+</head>
+<style>
+    .panel-body {
+        
+        background: darkred
+        
+    }
+   .row{
+       border:#000;
+       
+
+   }
+        
+    
+    .accordion section {
+        float: left;
+        overflow: hidden;
+        color: #333;
+        cursor: pointer;
+        background: darkred;
+        margin: 5px;
+    }
+    
+    .accordion section:hover {
+        background: #444;
+    }
+    
+    #about h3 {
+       color: white;
+    }
+    .accordion section p {
+       display:inline; 
+    }
+  
+    #about p{
+        color: white;
+    }
+    #about {
+background: black;
+
+    }
+    
+    .accordion section:after {
+        position: relative;
+        font-size: 24px;
+        color: #000;
+        font-weight: bold;
+    }
+    
+    .accordion section:nth-child(1):after {
+        content: '1';
+        
+    }
+    
+    .accordion section:nth-child(2):after {
+        content: '2';
+    }
+    
+  
+    
+    .accordion section:target {
+        background: #FFF;
+        padding: 10px;
+    }
+    
+    .accordion section:target:hover {
+        background: #FFF;
+    }
+    
+    .accordion section:target h2 {
+        width: 100%;
+    }
+    
+    .accordion section:target he2 a {
+        color: #333;
+        padding: 0;
+    }
+    
+    .accordion section:target p {
+        display: block;
+    }
+  
+
+    
+    .accordion section h2 a {
+        padding: 8px 10px;
+        display: block;
+        font-size: 16px;
+        font-weight: normal;
+        color: #eee;
+        text-decoration: none;
+    }
+    
+    .horizontal section {
+        width: 5%;
+        height: 250px;
+        -moz-transition: width 0.2s ease-out;
+        -webkit-transition: width 0.2s ease-out;
+        -o-transition: width 0.2s ease-out;
+        transition: width 0.2s ease-out;
+    }
+    
+    .horizontal section:after {
+        top: 140px;
+        left: 15px;
+    }
+    
+    .horizontal section h2 {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        width: 240px;
+        position: relative;
+        left: -100px;
+        top: 85px;
+    }
+    /*On mouse over open slide*/
+    
+    .horizontal :target {
+        width: 73%;
+        height: 300px;
+    }
+    
+    .horizontal :target h2 {
+        top: 0px;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    .panel-default
+    {
+        color: white;
+    }
+    li{
+        color: white;
+    }
+</style>
+
+<body ng-controller="courseDashController as course">
+  
+        <!--/.container -->
+    </nav>
+    <!--/nav end -->
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Mexican cuisine</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a href="landingpage.html">Home</a></li>
+                        <li>Courses</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 margin-btm-60">
+                <!--courses tabs-->
+                <div>
+                    <!-- Nav tabs -->
+                   
+                   
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="tred">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="course-box">
+                                        <a class="thumb" href="#">
+                                            <img src="/content/img/images/threetacos.jpg" alt="" class="img-responsive">
+                                            <span class="price-tag skin">Phrases</span>
+                                        </a>
+                                        <div class="course-desc">
+                                            <h4><a href="#">Food Vocabulary</a></h4>
+                                            <span>Phrases for ordering food</span>
+                                            <div class="desc-footer">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <uib-accordion>
+                                                            <div uib-accordion-group class="panel-default" is-open="status.open">
+                                                                <uib-accordion-heading>
+                                                                    View Vocabulary List
+
+                                                                </uib-accordion-heading>
+                                                                <ul>
+                                                                    <li>me gustaria...</li>
+                                                                    <li>no me gusta... </li>
+                                                                    <li> donde esta el menu... </li>
+                                                                    <li> quisiera.. </li>
+                                                                    <li> estoy lista para ordenar </li>
+                                                                    <li> sabroso </li>
+                                                                    <li> chile </li>
+                                                                    <li> delicioso </li>
+                                                                    <li> sin gusto </li>
+                                                                </ul>
+                                                            </div>
+                                                        </uib-accordion>
+                                                    </div>
+                                                    <div class="col-xs-6 text-right">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--course-box-->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="course-box">
+                                        <a class="thumb" href="#">
+                                            <img src="/content/img/images/Cochinita-Pibil.jpg" alt="" class="img-responsive">
+                                            <span class="price-tag skin">Classic Dishes</span>
+                                        </a>
+                                        <div class="course-desc">
+                                            <h4><a href="#">A Brief History</a></h4>
+                                            <span> Yucatan food dishes</span>
+                                            <div class="desc-footer">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+
+                                                        <uib-accordion>
+                                                            <div uib-accordion-group class="panel-default" is-open="status.open">
+                                                                <uib-accordion-heading>
+                                                                    View Vocabulary List
+
+                                                                </uib-accordion-heading>
+                                                                <ul>
+                                                                    <li>frijoles</li>
+                                                                    <li> tamales </li>
+                                                                    <li> arroz </li>
+                                                                    <li> cocina </li>
+                                                                    <li> picante </li>
+                                                                    <li> sabroso </li>
+                                                                    <li> chile </li>
+                                                                    <li> delicioso </li>
+                                                                    <li> sin gusto </li>
+                                                                </ul>
+                                                            </div>
+                                                        </uib-accordion>
+
+
+                                                    </div>
+                                                    <div class="col-xs-6 text-right">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--course-box-->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="course-box">
+                                        <a class="thumb" href="#">
+                                            <img src="/content/img/images/tulumfood.jpg" alt="" class="img-responsive">
+                                            <span class="price-tag skin">Food and Travel</span>
+                                        </a>
+                                        <div class="course-desc">
+                                            <h4><a href="#">Food and Travel</a></h4>
+                                            <span>Tulum</span>
+
+                                            <div class="desc-footer">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <uib-accordion>
+                                                            <div uib-accordion-group class="panel-default" is-open="status.open">
+                                                                <uib-accordion-heading>
+                                                                    View Vocabulary List
+
+                                                                </uib-accordion-heading>
+                                                                <ul>
+                                                                    <li>frijoles</li>
+                                                                    <li> tamales </li>
+                                                                    <li> arroz </li>
+                                                                    <li> cocina </li>
+                                                                    <li> picante </li>
+                                                                    <li> sabroso </li>
+                                                                    <li> chile </li>
+                                                                    <li> delicioso </li>
+                                                                    <li> no me gusta </li>
+                                                                </ul>
+                                                            </div>
+                                                        </uib-accordion>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+<div id="about"></div>
+  
+        
+           
+               
+               
+                                                
+                                                    
+                                                    <div class="col-md-12"
+                                                   >
+                                                        <uib-accordion>
+                                                            <div uib-accordion-group class="panel-default" is-open="status.open">
+                                                                <uib-accordion-heading>
+                                                                  <h4>  Assignment</h4>
+
+                                                                </uib-accordion-heading>
+                                                               <section id="about">
+                                        
+                                            <h3>Homework</h3>
+                                            <p>Please make flashcards for vocabulary words </p>
+                                        </section>
+                                                            </div>
+                                                        </uib-accordion>
+                                                    </div>
+
+ 
+
+                                    
+                                    
+                                    </div>
+
+                                </div>
+        
+
+                                                    <!--course-box-->
+
+
+
+
+
+
+
+
+
+                                            </footer>
+                                            <!--footer end-->
+                                          
+</body>
+
+</html>

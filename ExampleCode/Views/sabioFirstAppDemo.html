@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="SabioApp">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--data-ng-app="sabioApp" tells the page which app to use to power any Angular code found within the body-content div.
+    "sabioApp" is the name of the application. this is defined in ~/Scripts/sabio.ng.app.js.-->
+    <div class="container body-content " >
+        <!--
+    the "as" syntax here is used to simply give a friendlier name to the controller.
+    within this div we have to reference the controller by this name:dashboard.
+    the controller in this design also holds the data.
+    see https://docs.angularjs.org/api/ng/directive/ngController
+ -->
+        <div class="panel-body" ng-controller="employeeController as dashboard" id="employeeCtrler">
+            <div class="panel-heading">Active Users</div>
+            <div class="panel-body admin-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--
+                    the ng-repeat is creating a for loop to iterate through the dashboard.items array.
+                    dashboard.items is an array of users which is pulled from the API as JSON data and attached to the controller
+                    in the ajax call's success handler.
+                    see https://docs.angularjs.org/api/ng/directive/ngRepeat
+                -->
+                        <div class="row animate-repeat" data-ng-repeat="emp in dashboard.items track by emp.id">
+                            <div class="col-sm-4">
+                                <a data-ng-click="dashboard.selectEmployee(emp)" href="">
+                                    <!--
+                                on click of this anchor tag, a function within the controller will be fired.
+                                that function is called selectEmployee and it accepts an employee object.
+                                "emp" is a member of the array and we call that object emp because
+                                that is the name we gave it in the ng-repeat attribute.            
+                                see https://docs.angularjs.org/api/ng/directive/ngClick
+                            -->
+                                    <i class="fa fa-user"></i> {{emp.firstName}} {{emp.lastName}}
+                                    <!--
+                                the double "{" is called an "expression" and is Angular template syntax for where to output data.
+                                see https://docs.angularjs.org/guide/expression
+                            -->
+                                </a>
+                            </div>
+                            <div class="col-sm-2">
+                                <!--
+                            here we use a date filter to format the employee's date of birth so it's readable.
+                            'shortDate' is a pre-defined format but there are many other formats which can be used.
+                            see https://docs.angularjs.org/api/ng/filter/date
+                        -->
+                                <span class="pull-right">{{emp.dob  | date:'shortDate'}}</span>
+                            </div>
+                            <div class="col-sm-6">{{emp.title}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Scripts/angular.js"></script>
+    <script src="/App/sabioFirstNgApp/sabioFirstAppController.js"></script>
+    <!--you must bring in the service file containing the code for running ajax calls-->
+    <script src="/Scripts/sabioFirstAppService.js"></script>
+</body>
+
+</html>

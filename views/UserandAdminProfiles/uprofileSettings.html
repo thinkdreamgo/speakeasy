@@ -1,0 +1,219 @@
+<html>
+
+<head>
+
+<style>
+.cta-skin {
+  background-color: #173A4A;
+  padding: 40px 0;
+}
+.tag-list li a:hover {
+  color: #17988E;
+}
+        .btn-skin{
+            background-color: #17988E; 
+        }
+        .profilepic {
+            padding: 3px;
+            border: 1px solid #021a40;
+        }
+        
+        strong {
+            color: black;
+        }
+        
+        span,
+        li {
+            color: black;
+        }
+        
+        .tab-content {
+            padding: 15px;
+            height: 370px;
+        }
+        
+        li.nav-item.active {
+            border-color: #173A4A;
+        }
+        
+        .email {
+            color: black;
+        }
+       #map {
+            width: 100%;
+            height: 370px;
+            background-color: #CCC;
+        }
+        nav-link active{
+            color:#021a40;
+        }
+       
+    </style>
+</head>
+
+<body ng-controller="ProfileController as profile">
+    
+    <!--/nav end -->
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Profile account</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Profile</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+    <!--Profile Content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>
+                    <div id="name" class="name" name="firstName">{{profile.profile.firstName}}</div>
+                    <span id="lname" class="lname" name="lastName">{{profile.profile.lastName}}</span></h3>
+                <div class="login-register-form">
+                        <!--
+                    <img class="profilepic" id="profileImg" name="fileKey" ng-src="content/images/avatar.jpg" alt="Profile image" width="150px" height="150px">
+                    <img class="profilepic" id="profileImg" name="fileKey" ng-src="{{profile.profile.fileKey}}" alt="Profile image" width="150px" height="150px">
+                    <input type="file" id="picChange" name="pic" ng-model="fileKey" accept="image/*">-->
+
+                    <img class="profilepic" id="profileImg" src="{{profile.profile.fileKey}}" alt="Profile image" width="150px" height="150px">
+                    <input type="file" id="picChange" name="pic" accept="image/*">
+
+                    <br>
+                    <input type="checkbox" ng-model="emailHide">
+                    <p>Check to show email</p>
+                    <h5 id="emailG" class="email" ng-show="emailHide" name="email">{{profile.profile.email}}</h5><br>
+                    <button type="button" class="btn btn-lg  btn-skin" href="landingpage.html" id="editModal">Logout</button>
+                </div>
+            </div>
+
+            <!-- Nav tabs -->
+            <div class="col-sm-6">
+                <ul class="nav nav-tabs" role="tablist" style="border-bottom-color: #173A4A">
+                   <!-- <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Course</a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#about" role="tab">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content" >
+                    <div class="tab-pane" id="about" role="tabpanel">
+                        <div id="aboutUp" style="font-size: 16px"><strong>About Me</strong>
+                            <p id="contentUp" style="color:black">{{profile.profile.aboutStatement}} </p>
+                        </div>
+                    </div>
+                    <!-- Map city google-->
+                    <div class="tab-pane" id="messages" role="tabpanel">
+                        <div class="location" style="font-size: 16px"><strong>Address:</strong> </div><br>
+                        <span id="loc2"><h5> {{profile.profile.addressLine1}} {{profile.profile.addressLine2}}<br> {{profile.profile.city}} {{profile.profile.stateProvinceCode}} {{profile.profile.zip}}</h5></span>
+                       <form ng-submit="profile.Address()" ng-hide="form">
+                            <div class="form-group">
+                                <input type="text" class=" form-control " id="addr" name="adress" ng-model="profile.profile.addressLine1" placeholder="Address Line 1">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class=" form-control " id="lname" name="lastName" ng-model="profile.profile.addressLine2" placeholder="Address Line 2">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class=" form-control " id="loc" name="city" ng-model="profile.profile.city" placeholder="City">
+                                <span class="input-icon"><i class=" fa fa-map-marker"></i></span>
+                            </div>
+                            <div class="row">
+                                  <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="text" class=" form-control " id="state" name="stateC" ng-model="profile.profile.stateProvinceCode" placeholder="State">
+                            </div></div>
+                             <div class="col-sm-4">
+                             <div class="form-group">
+                                <input type="text" class=" form-control " id="locZ" name="zip" ng-model="profile.profile.zip" placeholder="Zip Code">
+                            </div></div></div>
+                        <button type="submit" class="btn btn-lg btn-skin" >Edit Address</button>
+                       </form><br>
+                         <button type="button" class="btn btn-sm btn-skin" ng-click="form=!form" id="mapBtn">Form</button>
+                        <div ng-show="form"></div>
+                         
+                     <!-- Map city google
+                     <button type="button" class="btn btn-sm btn-skin" id="mapBtn">M</button>
+                        <div map-lazy-load="https://maps.google.com/maps/api/js" map-lazy-load-params="{{googleMapsUrl}}">
+                            <ng-map center="41,-87" zoom="3"></ng-map>
+                            
+                                </div>
+                                <div my-map=""></div>
+                                  <div id="map"></div>
+                        <div id="imagemap"></div>-->
+                    </div>
+                    <!-- Form for put update  -->
+                    <div class="tab-pane active" id="settings" role="tabpanel">
+                        <form id="tabForm" ng-submit="profile.UpdateForm()" ng-submit="profile.UpdateAbout()"> 
+                            <div class="form-group">
+                                <input type="text" class=" form-control " id="name" name="firstName" ng-model="profile.profile.firstName" placeholder="First Name">
+                                <span class="input-icon"><i class=" fa fa-user"></i></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class=" form-control " id="lname" name="lastName" ng-model="profile.profile.lastName" placeholder="Last Name">
+                                <span class="input-icon"><i class=""></i></span>
+                            </div>
+                             <div class="form-group">
+                                <input type="text" class=" form-control "  name="email" ng-model="profile.profile.email" placeholder="email">
+                                <span class="input-icon"><i class=""></i></span>
+                             </div>
+                            <textarea class="form-control" id="content" name="aboutStatement" ng-model="profile.profile.aboutStatement" placeholder="About"></textarea>
+                            <br>
+                            <button type="submit" class="btn btn-lg btn-block btn-skin" id="editP">Edit Profile</button>{{profile.ServerResponse}}
+                        </form>
+                    </div>
+                </div>
+            </div><!-- Tab panes and profile content end-->
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="space70"></div>
+    <!--footer start-->
+   
+    <!--footer end-->
+   
+    </div>
+    <!-- /.modal -->
+    <!-- jQuery -->
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/bootstrap-hover-dropdown.min.js"></script>
+    <script src="/scripts/sabio.js"></script>
+    <script src="/scripts/angular.js"></script>
+    <script src="/scripts/ui-bootstrap.min.js"></script>
+    <script src="/scripts/ui-bootstrap-tpls.min.js"></script>
+
+    <script type="text/javascript" src="/scripts/app/userprofile/profileModule.js"></script>
+    <script type="text/javascript" src="/scripts/app/userprofile/profileController.js"></script>
+    <script type="text/javascript" src="/scripts/app/userprofile/profileFactory.js"></script>
+    
+    <!--<script src="scripts/angular-route.min.js.map"></script>-->
+     <script src="/scripts/sabio.services.getProfileId.js"></script>
+   
+     <!--<script type="text/javascript" src="scripts/app/userprofile/profileDirective.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1pd7futzwyTCqiPKGyDFz_ZR_qGyR_hw" type="text/javascript"></script>-->
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1pd7futzwyTCqiPKGyDFz_ZR_qGyR_hw&callback=initMap">
+    </script>
+    <script>
+        sabio.page.userId = sessionStorage.getItem("user");
+
+    </script>
+</body>
+
+</html>

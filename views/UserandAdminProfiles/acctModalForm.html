@@ -1,0 +1,25 @@
+ <!--Practice Modal 3-->
+
+<div class="modal-demo">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <ul>
+                <li ng-repeat="item in acct.items">
+                    <a href="#" ng-click="$event.preventDefault(); acct.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ acct.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="acct.ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="acct.cancel()">Cancel</button>
+        </div>
+    </script>
+</div>
+
+
+
+<!--End of Practice Modal 3-->

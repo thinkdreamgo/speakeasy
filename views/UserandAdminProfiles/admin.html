@@ -1,0 +1,128 @@
+
+
+   
+         <!--Logo for project
+                <a class="navbar-brand" ><img src="/content/images/speakeasy1.png" alt="" height="55px" width="99px"></a>
+           -->
+    <!--/nav end -->
+
+
+
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Admin</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Profile</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+
+    <!--Admin Part form for quiz/questions-->
+    <div class="container">
+        <div class="row">
+            <div >
+            <h5>admin name: {{admin.profile.firstName}} {{admin.profile.lastName}} </h5></div>
+             <div class="col-md-6">
+                 <h4>Create Quiz</h4>
+                  <form id="quizStart" ng-submit="admin.SubmitQuiz()">
+                <div class="form-group">
+                    <label>Quiz Name:
+                    <input type="text" class=" form-control " id="quizTitle" name="quizName" ng-model="admin.question.quizName" placeholder="Quiz Name">
+                                <span class="input-icon"><i class=""></i></span>
+                        </div>
+                         <button type="submit" class="btn btn-lg btn-block btn-skin" id="submitQuiz">Submit</button>
+                </form>
+                <!--Question form start-->
+                <br>
+                <h4>Edit Question</h4>
+                  <form id="quizForm" ng-submit="admin.SubmitQuestion()">
+                    <div class="form-group">
+                                <labe>Answer Type:
+                                <input type="text" class=" form-control " id="quizAnsw" name="answerType" ng-model="admin.question.answerType" placeholder="multiple, single, open ONLY">
+                                <span class="input-icon"><i class=""></i></span><br>
+                            </div>
+                    <div class="form-group">
+                        <input type="text" class=" form-control " id="que" name="question" ng-model="admin.question.question" placeholder="Question">
+                        <span class="input-icon"><i class=" "></i></span>
+                    </div>
+                     <div class="form-group">
+                        <input type="text" class=" form-control " id="answ" name="answer" ng-model="admin.question.answers" placeholder="Answer 1">
+                         <input type="text" class=" form-control " id="answ" name="" ng-model="admin.question.isCorrect" placeholder="True or False">
+                     </div>
+                      <div class="form-group">
+                       <input type="text" class=" form-control " id="answ2" name="answer" ng-model="admin.question.answer2" placeholder="Answer 2">
+                       <input type="text" class=" form-control " id="answ" name="" ng-model="admin.question.isCorrect2" placeholder="True or False">
+                    </div>
+                      <div class="form-group">
+                       <input type="text" class=" form-control " id="questionId" name="id" ng-model="admin.question.id" placeholder="Id">
+                       </div>
+                    <button type="submit" class="btn btn-lg btn-block btn-skin" id="editQuestion">Edit</button>
+                     <!--<button type="submit" class="btn btn-lg btn-block btn-skin" id="submitQuestion">Post</button>-->
+                </form>
+               </div>
+  <!--Admin preview -->
+            <div class="container">
+                 <div class="col-md-4">
+                     <h4>Quiz Preview</h4>
+                      <div class="quizBox">
+                     <h3 id="quizTitle">  {{admin.question.quizName}} </h3>
+                     <div id="quizType"></div>
+                     <div id="quizQuestion">{{admin.question.question}}</div><br>
+                     <button ng-if="admin.question.answers"> {{admin.question.answers}} </button> 
+                      <button ng-if="admin.question.answer2"> {{admin.question.answer2}} </button>
+                     </div>
+                     <br>
+                      <div class="quizBox">
+                          <div ng-repeat="question in admin.question" ng-show="question.id==923 ">
+                     <h3 id="quizTitle" ui-sref="FrenchSingleCourse">  {{admin.quiz.quizName}} </h3>
+                     <div id="quizType"></div>
+                     <h5 style="float:right">Id:923</h5>
+                     <div id="quizQuestion">{{question.question}}</div><br>
+                     <button>  {{question.answers[0].answer}}</button> 
+                      <button> {{question.answers[1].answer}}</button>
+                     </div><br>
+                       <div ng-repeat="question in admin.question" ng-show="question.id==936 ">
+                            <h5 style="float:right">Id:936</h5>
+                           <div id="quizQuestion">{{question.question}}</div><br>
+                     <button>  {{question.answers[0].answer}}</button> 
+                      <button> {{question.answers[1].answer}}</button>
+                       </div></div>
+                       <br><!--
+                       <div class="quizBox">
+                          <div ng-repeat="question in admin.question" ng-show="question.id==982 ">
+                     <h3 id="quizTitle">  {{question.quizName}} </h3>-->
+
+                 </div>
+            </div>
+
+
+             </div>
+        </div>
+    </div>
+    <!--admin end-->
+   
+</div></div>
+           
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="space70"></div>
+
+   
+  <script type="text/javascript">
+        // sabio.page.userId = sessionStorage.getItem("user");
+        //   sabio.page.userId = parseInt(sessionStorage.getItem("user"));
+
+        sabio.page.UserId = sessionStorage.getItem("user");
+
+   
+    </script>

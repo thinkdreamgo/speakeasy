@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="test">
+
+<head>
+    <title>Test Angular</title>
+</head>
+
+<body>
+    <div ng-controller="testController as name">
+        First Name:<input type="text" ng-model="name.firstName" /><br> Middle Name:<input type="text" ng-model="name.middleName"
+        /><br> Last Name:<input type="text" ng-model="name.lastName" /><br>
+        <br> First Name: {{ name.firstName }}
+        <br> Middle Name: {{ name.middleName }}
+        <br> Last Name: {{ name.lastName }}
+    </div>
+    <script src="/scripts/angular.js"></script>
+    <script src="/scripts/angular-ui-router.js"></script>
+    <script src="scripts/app/chooseAdventure/testModule.js"></script>
+    <script src="scripts/app/chooseAdventure/testController.js"></script>
+</body>
+
+</html>

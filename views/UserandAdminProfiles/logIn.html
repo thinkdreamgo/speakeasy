@@ -1,0 +1,95 @@
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+
+            <form>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h1 class="modal-title">Log in Error!</h1>
+
+                    </div>
+                    <div class="form-group">
+                        <!--<button type="button" class="btn btn-default">View Adventures</button>-->
+                        <a href="logIn.html" class="btn btn-info" role="button">Try again please</a>
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--End of Modal-->
+    
+    <!--End of Modal-->
+
+
+
+
+    <!--/nav end -->
+
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Login to your account</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li>Login</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-register-form">
+                    <form name="loginForm" ng-submit="login.updateForm()" id="login-form">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 login_social">
+                                <a href="#" class="btn btn-facebook btn-block"><i class="fa fa-facebook"></i>Facebook</a>
+                            </div>
+                            <div class="col-md-6 col-sm-6 login_social">
+                                <a href="#" class="btn btn-twitter btn-block "><i class="fa fa-twitter"></i>Twitter</a>
+                            </div>
+                        </div>
+                        <div class="login-or">
+                            <hr class="hr-or"><span class="span-or">or</span></div>
+                        <div class="form-group" ng-class="{'has error':loginForm.email.$invalid && !loginForm.email.$pristine}">
+                            <input type="email" class=" form-control " name="email" placeholder="email" ng-model="login.userlogin.email" ng-minlength = "7" ng-maxlength = "30"/>
+                            <span class="input-icon"><i class=" fa fa-user"></i></span>
+                            <p ng-show="loginForm.email.$error.minlength" class="help-block"> Email is too short.</p>
+                            <p ng-show="loginForm.email.$error.maxlength" class="help-block"> Email is too long.</p>
+                        </div>
+                        <div class="form-group" ng-class="{'has error':loginForm.password.$invalid && !loginForm.password.$pristine}">
+                            <input type="password" class=" form-control " name="password" placeholder="Password" ng-model="login.userlogin.password" ng-minlength = "7" ng-maxlength = "16"/>
+                            <span class="input-icon"><i class=" fa fa-lock"></i></span>
+                            <p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block"> Password is required.</p>
+                        </div>
+                        
+                        <button type="submit" id="logIn" class="btn btn-lg btn-block btn-skin" ng-disabled="loginForm.$invalid">Login</button>
+
+                    </form>
+                    <a href="acct.html" class="btn btn-lg btn-link btn-block">Create Account!</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="space70"></div>

@@ -1,0 +1,163 @@
+        <script type="text/template" class="clonedComment">
+        <div class="cloneComment">
+            <div class="comment clearfix">
+                                <div class="comment-avatar">
+                                    <!--<img src="https://s-media-cache-ak0.pinimg.com/736x/f4/31/a4/f431a48b7c7d8f8879e43f2e3fdf1194.jpg" id="random">-->
+                                    <img id="random">
+                                </div>
+                                <div class="comment-content clearfix">
+                                    <h3 class="commentTitle"></h3>
+                                    <div class="comment-meta">By <span class="commenterName"></span> | Today, 12:31</div>
+                                    <div class="comment-body">
+                                        <p class="commentText"></p>
+                                        <a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+        </script>
+        <script type="text/template" class="clonedReply">
+        <div class="cloneReply">
+            <div class="comment clearfix">
+                                <div class="comment-avatar">
+                                   <!-- <img src="images/avatar.jpg" alt="avatar"> -->
+                                   <img id="newAvatar">
+                                </div>
+                                <div class="comment-content clearfix">
+                                    <h3 class="replyTitle"></h3>
+                                    <div class="comment-meta">By <span class="replierName"></span> | Today, 12:31</div>
+                                    <div class="comment-body">
+                                        <p class="replyText"></p>
+                                        <a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+        </script>
+    </div>
+
+    <script type="text/javascript">
+  sabio.page.startUp = function() {
+      $("#showComments").on("click", sabio.page.handlers.callAjax);
+      $("#newCommentButton").on("click", sabio.page.handlers.showNewForm);
+      $(".commentSubmit").on("click", sabio.page.handlers.transferComment);
+      $(".comments").on("click", ".btn-gray", sabio.page.handlers.replyModalShow);
+      $(".submitReplyButton").on("click", sabio.page.handlers.transferReply);
+
+  }
+
+  sabio.page.handlers.showNewForm = function() {
+      $(".comments-form").toggle();
+      $("html, body").animate({scrollTop: $("#newCommentButton").offset().top});
+  }
+
+  sabio.page.handlers.replyModalShow = function() {
+      event.preventDefault();
+      $("#replyModal").modal("show");
+      sabio.page.replyAppend = this;
+  }
+
+  sabio.page.cloneComment = function() {
+      return $($(".clonedComment").html()).clone();
+  }
+
+  sabio.page.collectComment = function() {
+      var collComment = {};
+      collComment.subject = $("#subject4").val();
+      collComment.name = $("#name4").val();
+      collComment.message = $("#message4").val();
+
+      return collComment
+  }
+
+  sabio.page.handlers.transferComment = function() {
+      event.preventDefault();
+      var transferC = sabio.page.collectComment();
+      sabio.page.setComment(transferC);
+      sabio.page.imageSwitch(transferC);
+    
+      $("#comment-form")[0].reset();
+      $(".comments-form").toggle();
+  }
+
+  sabio.page.setComment = function(collComment) {
+      
+      var setNewComment = sabio.page.cloneComment();
+      $(".commentTitle", setNewComment).html(collComment.subject);
+      $(".commenterName", setNewComment).html(collComment.name);
+      $(".commentText", setNewComment).html(collComment.message);
+      $(".comments").append(setNewComment);
+
+      var avatarImage = sabio.page.imageSwitch();
+      $("#random", setNewComment).attr("src", avatarImage);  
+
+  }
+
+  sabio.page.cloneReply = function() {
+      return $($(".clonedReply").html()).clone();
+  }
+
+  sabio.page.getReply = function() {
+      //adding array replies does nothing, breaks replies clone
+    //   if(arrays.replies) {
+    //       $(arrays.replies).addClass("clearfix");
+    //       var getReplyVals = {};
+    //   } else {
+ var getReplyVals = {};
+   
+      getReplyVals.subject = $("#replyTitle").val();
+      getReplyVals.name = $("#replierName").val();
+      getReplyVals.message = $("#replyText").val();
+      return (getReplyVals);
+  }
+  //}
+
+  sabio.page.handlers.transferReply = function() {
+      var transReply = sabio.page.getReply();
+      sabio.page.setReply(transReply);
+      $("#replyModal").modal("hide");
+      $("#replyModalForm")[0].reset();
+
+      //adding avatar to reply
+      sabio.page.imageSwitch(transReply);
+  }
+
+  sabio.page.setReply = function(getReplyVals) {
+      var setReplyVals = sabio.page.cloneReply();
+      $(".replyTitle", setReplyVals).html(getReplyVals.subject);
+      $(".replierName", setReplyVals).html(getReplyVals.name);
+      $(".replyText", setReplyVals).html(getReplyVals.message);
+
+     //adding avatar to reply
+      var avatarNew = sabio.page.imageSwitch();
+      $("#newAvatar", setReplyVals).attr("src", avatarNew);
+
+    //if else statement to append replies in proper place
+     if (sabio.page.replyAppend == null) {
+         $(sabio.page.replyAppend).closest(".comment").append(setReplyVals);
+     } else {
+         $(sabio.page.replyAppend).closest(".comment").append(setReplyVals);
+     }
+   }
+
+sabio.page.handlers.callAjax = function(){
+
+sabio.services.blogs.getLocal("myRemoteArray", sabio.page.onAjaxSuccess, null);
+ $(".comments").toggle();
+ $("html, body").animate({scrollTop: $(".comments").offset().top});
+}
+
+sabio.page.onAjaxSuccess= function(myRemoteArray) {
+
+      for (var i = 0; i < myRemoteArray.length; i ++) {
+          var arrays = myRemoteArray[i];
+          var commentSet = sabio.page.setComment(arrays);
+          //replies in array
+          var reply = sabio.page.getReply(arrays);
+
+          if(arrays.replies) {
+              sabio.page.onAjaxSuccess(arrays.replies, reply);
+          }
+     
+      }
+ }

@@ -1,0 +1,48 @@
+
+    <!--/nav end -->
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Speaksy's Blog!</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a ui-sref="home">Home</a></li>
+                        <li>User Blogs</li>
+                    </ol>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
+
+<br>
+<div class="col-md-3"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" ng-repeat="article in blog.items" ng-show="article.id==208" >
+            <h2 class="blog-post-title" style="padding-top: 10px">{{article.title}}</h2>
+            <!--<p class="blog-post-meta">by <a href="#">{{dashboard.users.email}}</a></p>-->
+            <p>{{article.content}} </p>
+            <a><img src="https://voulezvousdiner.a.cdnify.io/photos/_places/places.tokyo.jpg" class="img-responsive"> </a>
+            <div ui-view></div>
+
+        </div>
+    </div>
+</div>
+
+<div class="space40"></div>
+ <!--Button to leave comment on Blog-->
+ <div class="col-md-3"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <a ui-sref="BlogYourAdventure.blogForm" class="btn btn-success" id="iCommentForWhole"><i class="fa fa-comment"> </i> Have an Adventure Blog it!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="space70"></div>

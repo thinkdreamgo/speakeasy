@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Choose Your Travel Style</title>
+    <!-- Bootstrap -->
+    <link href="content/assanTheme/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="content/assanTheme/css/animate.css" rel="stylesheet">
+    <link href="content/assanTheme/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="content/assanTheme/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
+    <link href="content/assanTheme/owl-carousel/assets/owl.theme.default.css" rel="stylesheet">
+    <link href="content/assanTheme/flexslider/flexslider.css" rel="stylesheet">
+    <!--Revolution slider css-->
+    <link href="content/assanTheme/rs-plugin/css/settings.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="content/assanTheme/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Calligraffitti|Dancing+Script" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <style>
+        .activities {
+            list-style-type: none;
+            color: white;
+            font-size: 32px;
+            /*text-align: center;*/
+            line-height: 2;
+            position: absolute;
+            top: 0;
+            bottom: 160px;
+            right: 15px;
+            left: 15px;
+            /*background-color: rgba(17, 221, 167, 0.4);*/
+            background-color: rgba(255, 20, 20, 0.4);
+            cursor: pointer;
+        }
+        
+        .countries {
+            font-size: 16px;
+            list-style-type: none;
+        }
+        
+        a {
+            color: white;
+        }
+        
+        .languageName {
+            font-family: Calligraffitti;
+            font-size: 40px;
+        }
+
+        h1:first-child {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <div class="top-bar dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 hidden-xs">
+                    <span><i class="fa fa-phone"></i> 01 185-565-658</span>
+                    <span><i class="fa fa-envelope"></i> info@domain.com</span>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <span><a href="#"><i class="fa fa-user"></i> Sing In</a></span>
+                    <span><a href="apply.html" class="apply"><i class="fa fa-pencil"></i> Apply</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top yamm">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="content/assanTheme/images/logo-light.png" alt=""></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Default - Slider</a></li>
+                            <li><a href="index-video.html">V2 - Video</a></li>
+                            <li><a href="index-background-video.html">V3 - Video background</a></li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Menu levels</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" href="#">Second level</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#">Even More..</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">3rd level</a></li>
+                                            <li><a href="#">3rd level</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Second level</a></li>
+                                    <li><a href="#">Second level</a></li>
+                                </ul>
+                        </ul>
+                        </li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="staff.html">Travel Style</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="faq.html">F.A.Q</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="register.html">Register</a></li>
+                                <li><a href="events.html">Events</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle js-activated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Features <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.html">Header Dark</a></li>
+                                <li><a href="header-light.html">Header Light</a></li>
+                                <li><a href="index.html">Footer dark</a></li>
+                                <li><a href="footer-light.html">Footer Light</a></li>
+                                <li><a href="page-boxed.html">Page boxed</a></li>
+                            </ul>
+                        </li>
+                        <li class="search-toggle"><a href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="search-form">
+                                <input type="text" class="form-control" placeholder="Search here...">
+                            </form>
+                        </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container -->
+    </nav>
+    <!--/nav end -->
+    <div class="page-breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Choose Your Travel Style</h2>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Travel Style</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="space70"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 margin-btm-40">
+                <div class="row">
+                    <div class="col-sm-6 margin-btm-30 language">
+                        <div>
+                            <img src="content/assanTheme/images/region-spain.jpg" class="img-responsive spanimg langimg" alt="">
+                        </div>
+                        <ul class="activities actSpan" style="display: none">
+                            <li>Travel to a</li>
+                            <li class="languageName">Spanish </li>
+                            <li>Speaking country</li>
+                        </ul>
+                        <div class="space20"></div>
+                        <h4>Spanish</h4>
+                        <span>Principle</span>
+                        <p>
+                            Pellentesque eu bibendum massa. Morbi et metus adipiscing libero lobortis accumsan ac eget turpis. Duis vehicula, velit sit
+                            amet vehicula gravida, nibh dui cursus risus, eget tristique tortor dolor id ligula. Integer
+                            id iaculis ante.
+                        </p>
+                    </div>
+                    <div class="col-sm-6 margin-btm-30 language">
+                        <img src="content/assanTheme/images/arc_de_triomphe.jpg" class="img-responsive frenimg langimg" alt="">
+                        <ul class="activities actFren" style="display: none">
+                            <li>Travel to a</li>
+                            <li class="languageName">French</li>
+                            <li>Speaking country</li>
+                        </ul>
+                        <div class="space20"></div>
+                        <h4>French</h4>
+                        <span>Design Expert</span>
+                        <p>
+                            Pellentesque eu bibendum massa. Morbi et metus adipiscing libero lobortis accumsan ac eget turpis. Duis vehicula, velit sit
+                            amet vehicula gravida, nibh dui cursus risus, eget tristique tortor dolor id ligula. Integer
+                            id iaculis ante.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 margin-btm-30 language">
+                        <img src="content/assanTheme/images/Daigoji-Temple-Japan.jpg" class="img-responsive japimg langimg" alt="">
+                        <ul class="activities actJap" style="display: none">
+                            <li>Travel to a</li>
+                            <li class="languageName">Japanese </li>
+                            <li>Speaking country</li>
+                        </ul>
+                        <div class="space20"></div>
+                        <h4>Japanese</h4>
+                        <span>Principle</span>
+                        <p>
+                            testing this eu bibendum massa. Morbi et metus adipiscing libero lobortis accumsan ac eget turpis. Duis vehicula, velit sit
+                            amet vehicula gravida, nibh dui cursus risus, eget tristique tortor dolor id ligula. Integer
+                            id iaculis ante.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none">
+                <form id="form">
+                    <label>Question</label>
+                    <input type="text" class="inputQu" />
+                    <label>Answers</label>
+                    <input type="text" class="answer" />
+                </form>
+                <button type="btn" class="questionnaire">Submit</button>
+            </div>
+            <div class="col-md-3 margin-btm-40">
+                <div class="sidebar-widget">
+                    <h3>Events</h3>
+                    <div class="side-event clearfix">
+                        <div class="s-event-date">
+                            <span>April 16</span> 2016
+                        </div>
+                        <div class="s-event-content">
+                            <h5> <a href="#">
+                                        World online Video Tour at assan campus  
+                                    </a></h5>
+                            <p>9:AM - 1:PM</p>
+                        </div>
+                    </div>
+                    <!--event end-->
+                    <div class="side-event clearfix">
+                        <div class="s-event-date">
+                            <span>April 16</span> 2016
+                        </div>
+                        <div class="s-event-content">
+                            <h5> <a href="#">
+                                        World online Video Tour at assan campus  
+                                    </a></h5>
+                            <p>9:AM - 1:PM</p>
+                        </div>
+                    </div>
+                    <!--event end-->
+                    <div class="side-event clearfix">
+                        <div class="s-event-date">
+                            <span>April 16</span> 2016
+                        </div>
+                        <div class="s-event-content">
+                            <h5> <a href="#">
+                                        World online Video Tour at assan campus  
+                                    </a></h5>
+                            <p>9:AM - 1:PM</p>
+                        </div>
+                    </div>
+                    <!--event end-->
+                </div>
+                <!--sidebar widget end-->
+                <div class="sidebar-widget">
+                    <h3>Tag Cloud</h3>
+                    <ul class="list-inline tag-list">
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">AngularJs</a></li>
+                        <li><a href="#">Meteor</a></li>
+                        <li><a href="#">ReactJs</a></li>
+                        <li><a href="#">.Net</a></li>
+                        <li><a href="#">Jquery</a></li>
+                    </ul>
+                </div>
+                <!--sidebar widget end-->
+            </div>
+        </div>
+    </div>
+    <!--footer start-->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 margin-btm-30">
+                    <h3>Courses</h3>
+                    <ul class="list-unstyled f-list">
+                        <li><a href="#">Web Designing</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">Photoshop psd</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 margin-btm-30">
+                    <h3>Quick links</h3>
+                    <ul class="list-unstyled f-list">
+                        <li><a href="#">Apply now</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 margin-btm-30">
+                    <h3>Recent Post</h3>
+                    <ul class="list-unstyled f-post">
+                        <li class="clearfix">
+                            <a href="#" class="thumb"><img src="content/assanTheme/images/g1.jpg" alt="" width="70" class="img-responsive"></a>
+                            <div class="f-post-content">
+                                <a href="#">
+                                        Post title goes here
+                                    </a>
+                                <em>2 days ago</em>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <a href="#" class="thumb"><img src="content/assanTheme/images/g2.jpg" alt="" width="70" class="img-responsive"></a>
+                            <div class="f-post-content">
+                                <a href="#">
+                                        Post title goes here
+                                    </a>
+                                <em>2 days ago</em>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <a href="#" class="thumb"><img src="content/assanTheme/images/g3.jpg" alt="" width="70" class="img-responsive"></a>
+                            <div class="f-post-content">
+                                <a href="#">
+                                        Post title goes here
+                                    </a>
+                                <em>2 days ago</em>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 margin-btm-30">
+                    <h3>Contact us</h3>
+                    <ul class="list-inline footer-social">
+                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                    <p class="phone"><i class="fa fa-phone"></i> +0034 43244 44</p>
+                    <p>Monday - Friday - 9:Am to 5 Pm</p>
+                    <p>Questions: <a href="#">support@domain.com</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <span>&copy; Copyright 2017. All Right Reserved. Design_mylife</span>
+            </div>
+        </div>
+    </footer>
+    <script type="text/template" class="clonedQuiz">
+        <div class="container">
+            <h3 class="question"></h3>
+            <button type="button" class="btn country"></button>
+            
+        </div>
+    </script>
+    <!--footer end-->
+    <!-- jQuery -->
+    <script src="content/assanTheme/js/jquery.min.js"></script>
+    <script src="content/assanTheme/bootstrap/js/bootstrap.min.js"></script>
+    <script src="content/assanTheme/js/wow.min.js"></script>
+    <script src="content/assanTheme/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="content/assanTheme/js/jquery.stellar.min.js"></script>
+    <script src="content/assanTheme/flexslider/jquery.flexslider-min.js"></script>
+    <script src="content/assanTheme/owl-carousel/owl.carousel.min.js"></script>
+    <script src="content/assanTheme/js/custom.js"></script>
+    <!--revolution slider plugins-->
+    <script src="content/assanTheme/rs-plugin/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+    <script src="content/assanTheme/rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="content/assanTheme/js/revolution-custom.js"></script>
+    <script type="text/javascript" src="scripts/sabio.js"></script>
+    <script type="text/javascript" src="scripts/quizCalls.js"></script>
+    <script type="text/javascript">
+        sabio.page.answer = this;
+        sabio.page.startUp = function () {
+            $(".language").on("mouseenter", sabio.page.handlers.showAdventures);
+            $(".language").on("mouseleave", sabio.page.handlers.hideAdventures);
+            $(".actSpan").on("click", sabio.page.handlers.openSpanModal);
+            $(".actFren").on("click", sabio.page.handlers.openFrenModal);
+            $(".actJap").on("click", sabio.page.handlers.openJapModal);
+            $(".closebtn").on("click", sabio.page.handlers.clearQuiz);
+            $(".questionnaire").on("click", sabio.page.handlers.cloneQuest);
+            $(".btn-go").on("click", sabio.page.handlers.submitQuest);
+            $(".modalSpan").on("click", ".country", sabio.page.handlers.addClicked);
+        }
+
+        sabio.page.buttons = function() {
+            if ($(".country").text() == null) {
+                $(".country").addClass("hidden");
+            }
+        }
+        sabio.page.handlers.showAdventures = function () {
+            sabio.page.language = this;
+            $(sabio.page.language).closest("div").find("ul").show(sabio.page.language);
+        }
+
+        sabio.page.handlers.hideAdventures = function () {
+            $(".activities").hide();
+        }
+
+        sabio.page.handlers.showCountries = function () {
+            $(".countries").show();
+        }
+
+        sabio.page.handlers.hideCountries = function () {
+            $(".countries").hide();
+        }
+
+        sabio.page.handlers.openSpanModal = function () {
+            var id = 938;
+            sabio.services.speakeasy.quizGet(id, sabio.page.onSuccess, sabio.page.onError);
+        }
+
+        sabio.page.handlers.openFrenModal = function () {
+            var id = 935;
+            sabio.services.speakeasy.quizGet(id, sabio.page.onSuccess, sabio.page.onError);
+        }
+
+        sabio.page.handlers.openJapModal = function () {
+            var id = 936;
+            sabio.services.speakeasy.quizGet(id, sabio.page.onSuccess, sabio.page.onError);
+        }
+
+        sabio.page.cloneQuestions = function () {
+            return $($(".clonedQuiz").html()).clone();
+        }
+
+        sabio.page.collect = function () {
+            var collForm = {};
+            collForm.question = $(".inputQu").val();
+            collForm.answer = $(".answer").val();
+            return collForm
+        }
+
+        sabio.page.handlers.cloneQuest = function () {
+            event.preventDefault();
+            var transferC = sabio.page.collect();
+            sabio.page.setQuest(transferC);
+
+        }
+
+        sabio.page.setQuest = function (collForm) {
+            $(".modalSpan").modal("show");
+            var setQuiz = sabio.page.cloneQuestions();
+            $(".question", setQuiz).html(collForm.question);
+            $(".country", setQuiz).html(collForm.answer);
+            $(".newQuestion").append(setQuiz);
+
+        }
+
+        sabio.page.onSuccess = function (data) {
+            var array = data.items;
+            for (var i = 0; i < array.length; i++) {
+                var quest = array[i];
+                //var quest = array[i].question;
+                var questionSet = sabio.page.setQuest(quest);
+                for (var j = 0; j < 3; j++) {
+                    // var ans = array[i].answers[j].answer;
+                    var ans = array[i].answers[j];
+                    var answerSet = sabio.page.setQuest(ans);
+                }
+            }
+
+        }
+
+        sabio.page.onError = function () {
+            console.log("Error!");
+        }
+
+        sabio.page.handlers.submitQuest = function () {
+            event.preventDefault();
+            var clickItem = $(".clicked").text()
+            if (clickItem == "JapanAdventure") {
+                window.location.href = "Japanese.html#japanAdventure";
+
+            } else if (clickItem == "JapanArts and Culture") {
+                window.location.href = "Japanese.html#japanArts";
+
+            } else if (clickItem == "JapanLeisure") {
+                window.location.href = "Japanese.html#japanLeisure";
+
+            } else if (clickItem == "ChinaArts and Culture") {
+                window.location.href = "Japanese.html#chinaArts";
+
+            } else if (clickItem == "ChinaAdventure") {
+                window.location.href = "Japanese.html#chinaAdventure";
+
+            } else if (clickItem == "ChinaLeisure") {
+                window.location.href = "Japanese.html#chinaLeisure";
+
+            } else if (clickItem == "ThailandAdventure") {
+                window.location.href = "Japanese.html#thailandAdventure";
+
+            } else if (clickItem == "ThailandArts and Culture") {
+                window.location.href = "Japanese.html#thailandArts";
+
+            } else if (clickItem == "ThailandLeisure") {
+                window.location.href = "Japanese.html#thailandLeisure";
+
+            } else if (clickItem == "FranceAdventure") {
+                window.location.href = "French.html#frenchAdventure";
+
+            } else if (clickItem == "FranceArts and Culture") {
+                window.location.href = "French.html#frenchArts";
+
+            } else if (clickItem == "FranceLeisure") {
+                window.location.href = "French.html#leisureFrench";
+
+            } else if (clickItem == "Montreal, CanadaAdventure") {
+                window.location.href = "French.html#montrealAdventure";
+
+            } else if (clickItem == "Montreal, CanadaArts and Culture") {
+                window.location.href = "French.html#montrealArts";
+
+            } else if (clickItem == "Montreal, CanadaLeisure") {
+                window.location.href = "French.html#montrealLeisure";
+
+            } else if (clickItem == "MoroccoAdventure") {
+                window.location.href = "French.html#moroccoAdventure";
+
+            } else if (clickItem == "MoroccoArts and Culture") {
+                window.location.href = "French.html#moroccoArts";
+
+            } else if (clickItem == "MoroccoLeisure") {
+                window.location.href = "French.html#moroccoLeisure";
+
+            } else if (clickItem == "ArgentinaArts and Culture") {
+                window.location.href = "Spanish.html#argentinaArts";
+
+            } else if (clickItem == "ArgentinaLeisure") {
+                window.location.href = "Spanish.html#argentinaLeisure";
+
+            } else if (clickItem == "ArgentinaAdventure") {
+                window.location.href = "Spanish.html#argentinaAdventure";
+
+            } else if (clickItem == "MexicoAdventure") {
+                window.location.href = "Spanish.html#mexicoAdventure";
+
+            } else if (clickItem == "MexicoArts and Culture") {
+                window.location.href = "Spanish.html#mexicoArts";
+
+            } else if (clickItem == "MexicoLeisure") {
+                window.location.href = "Spanish.html#mexicoLeisure";
+
+            } else if (clickItem == "SpainAdventure") {
+                window.location.href = "Spanish.html#spainAdventure";
+
+            } else if (clickItem == "SpainArts and Culture") {
+                window.location.href = "Spanish.html#spainArts";
+
+            } else if (clickItem == "SpainLeisure") {
+                window.location.href = "Spanish.html#spainLeisure";
+
+            } else {
+                $(".modalError").modal("show");
+            }
+        }
+
+        sabio.page.handlers.addClicked = function () {
+            var clicked = this;
+            $(clicked).toggleClass("btn-success");
+            $(clicked).toggleClass("clicked");
+        }
+
+        sabio.page.handlers.clearQuiz = function () {
+            $(".country").remove();
+            $(".question").remove();
+            $(".checkbox-inline").remove();
+        }
+    </script>
+    <div class="modal modalSpan fade" tabindex="-1" role="dialog"  data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close closebtn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title">Questionnaire</h2>
+                </div>
+                <div class="modal-body">
+                    <h5>Choose one from each of the following.</h5>
+                    <div class="newQuestion"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default closebtn" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-go">Go</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modalError" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Questionnaire Error</h4>
+      </div>
+      <div class="modal-body">
+        <p>Please be sure to only select one choice for each question.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+
+</html>

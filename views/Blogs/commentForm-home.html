@@ -1,0 +1,28 @@
+ <!--Comment form to blog-->
+                <div id="commentPage" style="display:none">
+                        <form>
+                            <div id="commentTitleSpace">
+                                <label>Comment Title:</label>
+                                <br />
+                                <input type="text" id="inputCommentTitle" placeholder="Comment Title"/>
+                            </div>
+                            <br />
+                            <div id="commentEmailSpace">
+                                <label>Your Email:</label>
+                                <br />
+                                <input type="email" id="inputCommentEmail" placeholder="Your Email"/>
+                            </div>
+                            <br />
+                            <div id="commentContentSpace">
+                                <h2><strong>Comment Content</strong></h2>
+                                <textarea class="form-control" rows="4" id="inputCommentContent" placeholder="Your Comments"></textarea>
+                            </div>
+                            <br />
+                            <input type="button" id="iSubmitComment" value="Publish Comment"/>
+                            <input type="reset" id="iResetBlogComment" value="Reset Form"/>
+                            <input type="button" id="iBlogEdit" value="Back to Blog"/>
+                        </form>
+                </div>
+                <!--End of Comment form to blog-->
+
+                <div ui-view></div>

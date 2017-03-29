@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="sabioDemoApp">
+<head>
+    <title></title>
+</head>
+<body>
+
+
+    <div ng-controller="DemoController as demo">
+        First Name: <input type="text" ng-model="demo.firstName" /><br>
+        Last Name: <input type="text" ng-model="demo.lastName" /><br>
+
+
+        <br>
+
+        Full Name: {{ demo.firstName + " " + demo.lastName }}
+
+    </div>
+
+
+    <script src="/ExampleCode/Scripts/angular.js"></script>
+    <script src="/ExampleCode/App/sabioControllersDemo/sabioDemoModule.js"></script>
+    <script src="/ExampleCode/App/sabioControllersDemo/sabioDemoController.js"></script>
+</body>
+</html>

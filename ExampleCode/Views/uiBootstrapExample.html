@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html ng-app="ModalDemoApp">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS UI Bootstrap Modal Demo</title>
+    <link href="/ExampleCode/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/ExampleCode/Content/ui-bootstrap-csp.css" />
+</head>
+
+<body>
+    <h2>Angular Advanced Directives (New Version)</h2>
+    <p>
+        This page shows you how to use some of the directives provided by Angular Bootstrap module: <a href="https://angular-ui.github.io/bootstrap/"
+            target="_blank">https://angular-ui.github.io/bootstrap/</a>.
+    </p>
+    <div class="container" ng-controller="MainController as main">
+        <uib-tabset justified="true">
+            <uib-tab heading="Layout">
+                <uib-accordion>
+                    <!--as you can see we are using  uib-accordion-group as an attribute-->
+                    <div uib-accordion-group class="panel-default" heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                        This content is straight in the template.
+                    </div>
+                    <div uib-accordion-group class="panel-default" heading="Dynamic Body Content">
+                        <p>The body of the uib-accordion group grows to fit the contents</p>
+                        <!--<button type="button" class="btn btn-default btn-sm" ng-click="main.addItem()">Add Item</button>
+                        <div ng-repeat="item in main.items">{{item}}</div>-->
+                        <p>These directives are used to make different layout effects on your pages.</p>
+                        <h4><a target="_blank" href="https://angular-ui.github.io/bootstrap/#/carousel">Image Carousel</a></h4>
+                        <div style="height: 305px">
+                            <div uib-carousel active="active" interval="main.myInterval" no-wrap="noWrapSlides">
+                                <div uib-slide ng-repeat="slide in main.slides" index="slide.id">
+                                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                                    <div class="carousel-caption">
+                                        <h4>Slide {{slide.id}}</h4>
+                                        <p>{{slide.text}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                        <uib-accordion-heading>
+                            I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                        </uib-accordion-heading>
+                        This is just some content to illustrate fancy headings.
+                    </div>
+                </uib-accordion>
+            </uib-tab>
+            <uib-tab heading="Feedback">
+                <p>This tab demonstrates several different ways to display feedback to the user or get information back.</p>
+                <h4><a target="_blank" href="https://angular-ui.github.io/bootstrap/#/modal">Modal Window</a></h4>
+                <button class="btn btn-primary" ng-click="main.openModal()">Open me!</button>
+                <br />
+                <br />
+                <h4><a target="_blank" href="https://angular-ui.github.io/bootstrap/#/alert">Alerts</a></h4>
+                <div uib-alert ng-show="main.modalSelected" type="success">
+                    Selection from modal is: <strong>{{main.modalSelected}}</strong>. This value is coming from a property
+                    in main controller which gets set when the modal window closes.
+                </div>
+                
+                
+            </uib-tab>
+          
+                </div>
+    <script type="text/ng-template" id="modalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in mc.modalItems">
+                    <a class="btn btn-success" ng-click="mc.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ mc.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="mc.ok()">OK</button>
+            <button class="btn btn-warning" ng-click="mc.cancel()">Cancel</button>
+        </div>
+    </script>
+    <!-- Vendor Libraries -->
+    <script src="/ExampleCode/Scripts/angular.js"></script>
+    <script src="/ExampleCode/Scripts/angular-animate.js"></script>
+    <script src="/ExampleCode/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <!-- App -->
+    <script src="/ExampleCode/App/uiBootstrapDemo/sabioDemoModule.js"></script>
+    <script src="/ExampleCode/App/uiBootstrapDemo/uiBootstarpControllerDemo.js"></script>
+    <script src="/ExampleCode/App/uiBootstrapDemo/uiBootstrapModalControllerDemo.js"></script>
+</body>
+
+</html>

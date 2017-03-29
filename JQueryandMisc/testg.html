@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="SpeakEasy">
+<style>
+    /*#topFaq {
+        text-indent: 98px;
+        text-align: center;
+    }*/
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title class="title">Frequently Asked Questions</title>
+    <link href="content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="scripts/ui-bootstrap-csp.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" ng-controller="faqsController as faqs">
+        <uib-accordion close-others="oneAtATime">
+            <div uib-accordion-group class="panel-default" is-open="status.open">
+                <uib-accordion-heading>
+                    I can have markup, too!
+                </uib-accordion-heading>
+                This is just some content to illustrate fancy headings.
+            </div>
+        </uib-accordion>
+    </div>
+    <!-- jQuery -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/angular.js"></script>
+    <script type="text/javascript" src="scripts/angular-animate.min.js"></script>
+    <script type="text/javascript" src="scripts/ui-bootstrap-tpls.min.js"></script>
+    <!--revolution slider plugins-->
+    <script type="text/javascript" src="scripts/sabio.js"></script>
+    <script type- "text/javascript" src="scripts/app/faq/faqModules.js"></script>
+    <script type="text/javascript" src="scripts/app/faq/faqsController.js"></script>
+    <script type="text/javascript" src="scripts/app/faq/faqsFactory.js"></script>
+    <script type="text/javascript"></script>
+</body>
+
+</html>
